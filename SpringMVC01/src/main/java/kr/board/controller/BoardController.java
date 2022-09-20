@@ -32,8 +32,7 @@ public class BoardController {
 //		list.add(vo);
 //		list.add(vo);
 //		list.add(vo);
-//		
-//		model.addAttribute("list", list);
+//		ㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹaddAttribute("list", list);
 		
 		List<Board> list = boardMapper.getLists();
 		model.addAttribute("list", list);
