@@ -9,5 +9,5 @@ import kr.board.entity.Board;
 @Mapper
 public interface BoardMapper {
 
-	public List<Board> getLists(); //전체 리스트 fffff
+	public List<Board> getLists(); //전체 리스트 ...
 }
