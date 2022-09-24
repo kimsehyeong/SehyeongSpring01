@@ -1,12 +1,14 @@
 package kr.board.controller;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import kr.board.entity.Board;
 import kr.board.mapper.BoardMapper;
@@ -39,4 +41,33 @@ public class BoardController {
 		
 		return "boardList";
 	}
+	
+	@GetMapping("boardForm.do")
+	public String boardForm() {
+		return "boardForm";
+	}
+	
+	@PostMapping("boardInsert.do")
+	public String boardInsert(Board vo) { //BoardVO로 파라미터 값을 받아준다
+		
+		boardMapper.boardInsert(vo);
+		
+		return "redirect:/boardList.do";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
