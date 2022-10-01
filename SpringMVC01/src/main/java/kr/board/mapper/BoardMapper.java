@@ -13,5 +13,5 @@ public interface BoardMapper {
 	
 	public void boardInsert(Board vo); //리턴값은 따로 없다 
 	
-	
+	public Board boardContent(int idx); //상세보기
 }

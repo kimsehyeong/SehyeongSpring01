@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.board.entity.Board;
 import kr.board.mapper.BoardMapper;
@@ -51,11 +52,19 @@ public class BoardController {
 	public String boardInsert(Board vo) { //BoardVO로 파라미터 값을 받아준다
 		
 		boardMapper.boardInsert(vo);
-		
+		System.out.println("###글입력완료");
 		return "redirect:/boardList.do";
 	}
 	
-	
+	@GetMapping("boardContent.do")
+	public String boardContent(@RequestParam("num") int idx, Model model) {
+		
+		Board vo = boardMapper.boardContent(idx);
+		model.addAttribute("vo", vo); //객체바인딩 실시
+		System.out.println("상세보기::::::"+vo);
+		
+		return "boardContent";
+	}
 	
 	
 	
