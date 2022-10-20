@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,27 +19,28 @@
   <div class="panel panel-default">
     <div class="panel-heading">Board</div>
     <div class="panel-body">
-    	<table class="table table-bordered table-hover">
-    	<tr>
-    		<td>번호</td>
-    		<td>제목</td>
-    		<td>내용</td>
-    		<td>작성자</td>
-    		<td>작성일</td>
-    		<td>조회수</td>
-    	</tr>
-    <c:forEach var="vo" items="${list}">
-    	<tr>
-    		<td>${vo.idx}</td>
-    		<td><a href="boardContent.do?num=${vo.idx}">${vo.title}</a></td>
-    		<td>${vo.content}</td>
-    		<td>${vo.writer}</td>
-    		<td>${vo.indate}</td>
-    		<td>${vo.count}</td>
-    	</tr>
-    </c:forEach>
-    </table>
-    <a href="boardForm.do" class="btn btn-primary btn-sm">글쓰기</a>
+    <form action="boardInsert.do" method="post">
+    	<table class="table">
+    		<tr>
+    			<td>Title</td>
+    			<td><input type="text" name="title" class="form-control"></td>
+    		</tr>
+    		<tr>
+    			<td>Content</td>
+    			<td><textarea rows="7" name="content" class="form-control" ></textarea></td>
+    		</tr>
+    		<tr>
+    			<td>Writer</td>
+    			<td><input type="text" name="writer" class="form-control"></td>
+    		</tr>
+    		<tr>
+    			<td colspan="2" align="center">
+    			<button type="submit" class="btn btn-success btn-sm">SUBMIT</button>
+    			<button type="button" class="btn btn-warning btn-sm">CANCEL</button>
+    			</td>
+    		</tr>
+    	</table>
+    </form>
     </div>
     <div class="panel-footer">Kimsehyeong@springMVC_Test</div>
   </div>
