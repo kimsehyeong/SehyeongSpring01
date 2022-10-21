@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -64,17 +65,55 @@ public class BoardController {
 	public String boardContent(@RequestParam("num") int idx, Model model) {
 		
 		Board vo = boardMapper.boardContent(idx);
+		
+		//조회수 증가
+		boardMapper.boardCount(idx);
+		
 		model.addAttribute("vo", vo); //객체바인딩 실시
-		System.out.println("상세보기::::::"+vo);
+		System.out.println("상세보기---->"+vo);
+		
+		
+		
 		
 		return "boardContent";
 	}
+	/**
+	 * 
+	 * @PathVariable 과 @RequestParam 차이
+	 * @pathVariable은 URI 창에 변수 명없이 바로 들어올수있다 
+	 * ex: www.baordList.do/${idx}
+	 * 대신 mapping 받을때 받는 값을 줘야한다
+	 * ex) @getMapping("boardList.do/{num}")
+	 * 
+	 * 
+	 * @RequestParam은 변수명까지 기입해줘야한다 -> 그후 컨트롤러에서 변수명을 받아준다
+	 * ex: www.boardList.do?num=${idx}
+	 */
+	@GetMapping("boardDelete.do/{num}")
+	public String boardDelete(@PathVariable("num") int idx) {
+		
+		boardMapper.boardDelete(idx);
+		log.info("이 번호 삭제 ---->"+idx);
+		return "redirect:/boardList.do";
+		
+	}
 	
+	@GetMapping("boardUpdateForm.do/{num}")
+	public String boardUpdateForm(@PathVariable("num") int idx, Model model) {
+		Board vo = boardMapper.boardContent(idx);
+		model.addAttribute("vo", vo);
+		
+		return "boardUpdate";
+	}
 	
-	
-	
-	
-	
+	@PostMapping("boardUpdate.do")
+	public String boardUpdate(Board vo) {
+		
+		boardMapper.boardUpdate(vo);
+		log.info("수정성공 -->" + vo);
+		
+		return "redirect:/boardList.do";
+	}
 	
 	
 	
