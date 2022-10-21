@@ -21,6 +21,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class BoardController {
 
+	
+	///t수정 테스트
+	
 	@Autowired
 	BoardMapper boardMapper;
 	
