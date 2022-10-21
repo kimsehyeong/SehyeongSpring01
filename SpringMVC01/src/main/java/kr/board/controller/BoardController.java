@@ -78,7 +78,7 @@ public class BoardController {
 		return "boardContent";
 	}
 	/**
-	 * 
+	 * 수정합니다
 	 * @PathVariable 과 @RequestParam 차이
 	 * @pathVariable은 URI 창에 변수 명없이 바로 들어올수있다 
 	 * ex: www.baordList.do/${idx}
