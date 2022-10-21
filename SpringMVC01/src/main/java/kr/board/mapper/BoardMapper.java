@@ -21,7 +21,7 @@ public interface BoardMapper {
 	
 	public Board boardContent(int idx); //상세보기
 	
-	public void boardDelete(int idx);
+	public void boardDelete(int idx); //삭제 기능
 	
-	public void boardUpdate(Board vo);
+	public void boardUpdate(Board vo); // 수정 기능 
 }

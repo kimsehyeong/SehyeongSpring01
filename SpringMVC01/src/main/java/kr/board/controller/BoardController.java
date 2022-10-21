@@ -43,14 +43,16 @@ public class BoardController {
 		
 		List<Board> list = boardMapper.getLists();
 		model.addAttribute("list", list);
-		log.debug("hello");
+		System.out.println("리스트를 호출");
 		
 		return "boardList";
 	}
 	
 	@GetMapping("boardForm.do")
 	public String boardForm() {
+		System.out.println("글쓰기 폼 호출");
 		return "boardForm";
+		
 	}
 	
 	@PostMapping("boardInsert.do")
