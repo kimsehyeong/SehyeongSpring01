@@ -13,7 +13,7 @@ public interface BoardMapper {
 	/**
 	 * return 값들은 model을 이용해서 뿌려줄때 쓴다 (객체바인딩)
 	 */
-	
+	//ㅏㅏㅏㅏㅏ
 	
 	
 	public List<Board> getLists(); //전체 리스트
