@@ -26,7 +26,7 @@
 <jsp:include page="common/header.jsp"/>      
   <div class="panel panel-default">
     <div>
-       <img src="${contextPath}/resources/images/640.jpg" style="width: 100%; height: 400px;"/>
+       <img src="${contextPath}/resources/images/background.jpg" style="width: 100%; height: 400px;"/>
     </div>
     <div class="panel-body">
 		<ul class="nav nav-tabs">
