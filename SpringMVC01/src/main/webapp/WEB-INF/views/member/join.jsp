@@ -35,7 +35,7 @@
     		   }
     		   $("#myModal").modal("show");
     	   },    	   
-    	   error : function(){ alert("error"); }    	   
+    	   error : function(){ alert("아이디 중복 체크 오류 . . ."); }    	   
        });    	
     }  
     function passwordCheck(){

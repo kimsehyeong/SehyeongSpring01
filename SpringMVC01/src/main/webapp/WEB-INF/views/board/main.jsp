@@ -27,10 +27,10 @@
     		type : "get",
     		dataType : "json",
     		success : makeView,
-    		error : function(){ alert("error");  }    		
+    		error : function(){ alert("리스트 호출 오류 . . ");  }    		
     	});
      }                        //         0      1      2 ---->
-     function makeView(data){ // data=[{   },{    },{    },,, ]
+     function makeView(data){ // data=[{   },{    },{    },,,ㅇ ]
     	 var listHtml="<table class='table table-bordered'>";
     	 listHtml+="<tr>";
     	 listHtml+="<td>번호</td>";

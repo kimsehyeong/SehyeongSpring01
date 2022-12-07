@@ -182,8 +182,8 @@ public class MemberController {
 	public String memImageUpdate(HttpServletRequest request,HttpSession session, RedirectAttributes rttr) throws IOException {
 		// 파일업로드 API(cos.jar, 3가지)
 		MultipartRequest multi=null;
-//		int fileMaxSize=40*1024*1024; // 10MB		
-		int fileMaxSize=1024 * 1024 * 1024; 	
+		int fileMaxSize=40*1024*1024; // 10MB		
+//		int fileMaxSize=1024 * 1024 * 1024; 	
 		String savePath=request.getRealPath("resources/upload"); // 1.png
 		try {                                                                        // 1_1.png
 			// 이미지 업로드
